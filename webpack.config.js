@@ -2,7 +2,6 @@ const webpack = require('webpack');
 var path = require("path");
 
 var CopyWebpackPlugin = (CopyWebpackPlugin = require('copy-webpack-plugin'), CopyWebpackPlugin.default || CopyWebpackPlugin);
-var DashboardPlugin  = require("webpack-dashboard/plugin");
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 const nodeExternals = require("webpack-node-externals");
 
@@ -19,7 +18,6 @@ module.exports = {
 	entry: {
 		"index": path.resolve("src/index.ts")
 	},
-	debug: true,
 
 	module: {
 		preLoaders: [{
@@ -57,8 +55,7 @@ module.exports = {
 	},
 	plugins: [
 		new webpack.optimize.OccurenceOrderPlugin(true),
-		new ForkCheckerPlugin(),
-		new DashboardPlugin()
+		new ForkCheckerPlugin()
 	],
 	externals: [nodeExternals()],
 	node: {

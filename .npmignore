@@ -1,12 +1,2 @@
-.npmignore
-.gitignore
-/__build__
-/__server_build__
 /node_modules
-/doc/
 /typings
-/coverage
-/tsd_typings/
-.idea
-.vscode
-
