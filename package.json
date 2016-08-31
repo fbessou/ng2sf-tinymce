@@ -1,0 +1,29 @@
+{
+  "name": "ng2sf-tinymce",
+  "version": "1.0.0",
+  "description": "A TinyMce widget for Angular2 Schema Form.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fbessou/ng2sf-tinymce.git"
+  },
+  "keywords": [
+    "tinymce",
+    "angular"
+  ],
+  "author": "Frank Bessou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fbessou/ng2sf-tinymce/issues"
+  },
+  "homepage": "https://github.com/fbessou/ng2sf-tinymce#readme",
+  "devDependencies": {
+    ""
+  },
+  "peerDependencies": {
+    "@angular/core": "2.0.0-rc.5",
+    "tinymce": "^4.4.2"
+  }
+}
