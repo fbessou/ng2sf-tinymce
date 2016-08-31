@@ -1,4 +1,4 @@
-node_modules/*
-dist/*
-typings/*
-ng2sf*.tgz
+/node_modules/*
+/dist/*
+/typings/*
+/ng2sf*.tgz
