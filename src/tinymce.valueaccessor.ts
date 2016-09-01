@@ -2,7 +2,6 @@ import {
 	Directive,
 	HostListener,
 	Inject,
-	Provider,
 	forwardRef
 } from "@angular/core";
 
@@ -13,11 +12,9 @@ import {
 	NG_VALUE_ACCESSOR
 } from "@angular/forms";
 
-const TINYMCEVALUEACCESSOR = new Provider(NG_VALUE_ACCESSOR, {useExisting: forwardRef(() => TinyMCEValueAccessor), multi: true});
-
 @Directive({
 	selector: "tinymce[ngModel],tinymce[formControl],tinymce[formControlName]",
-	providers : [TINYMCEVALUEACCESSOR]
+	providers : [{provide: NG_VALUE_ACCESSOR, useExisting: TinyMCEValueAccessor, multi: true}]
 })
 export class TinyMCEValueAccessor implements ControlValueAccessor {
 

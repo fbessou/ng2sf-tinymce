@@ -1,4 +1,4 @@
 /node_modules/*
-/dist/*
+/dist
 /typings/*
 /ng2sf*.tgz
