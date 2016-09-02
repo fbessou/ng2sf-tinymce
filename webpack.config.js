@@ -57,7 +57,7 @@ module.exports = {
 		new webpack.optimize.OccurenceOrderPlugin(true),
 		new ForkCheckerPlugin()
 	],
-	externals: [nodeExternals()],
+	externals: [nodeExternals({whitelist:[/^tinymce/]})],
 	node: {
 		global: 'window',
 		crypto: 'empty',

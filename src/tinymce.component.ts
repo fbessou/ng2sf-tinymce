@@ -2,16 +2,21 @@ import {
 	AfterViewInit,
 	Component,
 	EventEmitter,
+	Inject,
 	Input,
 	NgZone,
 	OnChanges,
 	OnDestroy,
+	OpaqueToken,
+	Optional,
 	Output
 } from "@angular/core";
 
 declare var tinymce;
 import "tinymce/tinymce";
 import "tinymce/themes/modern/theme";
+
+export const TINYMCE_URL = new OpaqueToken("TINYMCE_URL");
 
 @Component({
 	selector: "tinymce",
@@ -22,15 +27,18 @@ export class TinyMCEComponent implements OnChanges, AfterViewInit, OnDestroy {
 	@Input() readonly: boolean = false;
 	@Input() id: string;
 	@Input() options: any = {plugins: "code"};
-	@Input() baseURL: string = "/node_modules/tinymce";
 	@Output() contentChange = new EventEmitter();
 	@Output() blur = new EventEmitter();
 	@Output() focus = new EventEmitter();
 
+	baseURL: string = "";
+
 	private editor: any = null;
 	private initialValue: string = "";
-
-	constructor(private zone: NgZone) { }
+	
+	constructor(private zone: NgZone, @Inject(TINYMCE_URL) @Optional() TINYMCE_URL: string ) {
+		this.baseURL = TINYMCE_URL ? TINYMCE_URL : "//cdnjs.cloudflare.com/ajax/libs/tinymce/4.4.2";
+	}
 
 	ngAfterViewInit() {
 		this.createEditor();
@@ -60,15 +68,13 @@ export class TinyMCEComponent implements OnChanges, AfterViewInit, OnDestroy {
 			selector: "#" + this.id,
 			plugins: this.options.plugins,
 			readonly: this.readonly ? 1 : 0,
-			setup: (editor) => { this.editor = editor; }
+			setup: (editor) => { this.editor = editor; this.bindEditor();}
 		};
 
 		if (this.readonly) {
 			options.toolbar = options.menubar = false;
 		}
-
 		tinymce.init(options);
-		this.bindEditor();
 	}
 
 	private bindEditor() {
