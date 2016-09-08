@@ -13,7 +13,8 @@ module.exports = {
 	output: {
 		path: path.resolve("./dist"),
 		filename: "index.js",
-		libraryTarget:"commonjs"
+		library: true,
+		libraryTarget: "commonjs2"
 	},
 	entry: {
 		"index": path.resolve("src/index.ts")
