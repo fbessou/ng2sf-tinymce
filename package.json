@@ -1,6 +1,6 @@
 {
   "name": "ng2sf-tinymce",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A TinyMce widget for Angular2 Schema Form.",
   "scripts": {
     "clean": "rimraf node_modules doc dist && npm cache clean",
