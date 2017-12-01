@@ -6,6 +6,6 @@ import { TinyMCEValueAccessor } from "./tinymce.valueaccessor";
 
 @Component({
 	selector: "ng2sf-tinymce",
-	template: require("./tinymce.widget.html"),
+	templateUrl: "./tinymce.widget.html",
 })
 export class TinyMCEWidget extends ControlWidget {}
