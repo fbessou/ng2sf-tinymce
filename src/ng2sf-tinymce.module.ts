@@ -7,9 +7,9 @@ import { TinyMCEWidget } from "./tinymce.widget";
 import { TinyMCEValueAccessor } from "./tinymce.valueaccessor";
 
 @NgModule({
-	imports: [BrowserModule, ReactiveFormsModule],
-	declarations: [TinyMCEComponent, TinyMCEWidget, TinyMCEValueAccessor],
-	entryComponents: [TinyMCEWidget],
-	exports: [TinyMCEWidget]
+  imports: [BrowserModule, ReactiveFormsModule],
+  declarations: [TinyMCEComponent, TinyMCEWidget, TinyMCEValueAccessor],
+  entryComponents: [TinyMCEWidget],
+  exports: [TinyMCEWidget, TinyMCEComponent, TinyMCEValueAccessor]
 })
 export class Ng2SFTinyMCEModule {}
