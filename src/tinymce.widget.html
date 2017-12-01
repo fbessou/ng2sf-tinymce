@@ -1,4 +1,4 @@
 <div class="widget">
 	<label [attr.for]="id" class="horizontal control-label">{{schema.description}}</label>
-	<tinymce [formControl]="control" [id]="id" [readonly]="schema.readonly" ></tinymce>
+	<tinymce [formControl]="control" [id]="id" [readonly]="schema.readonly" [options]="schema.widget.tinymce_options"></tinymce>
 </div>
