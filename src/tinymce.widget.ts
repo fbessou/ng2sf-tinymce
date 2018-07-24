@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import { ControlWidget } from "angular2-schema-form";
+import {ControlWidget} from "ngx-schema-form";
 import { TinyMCEComponent } from "./tinymce.component";
 import { TinyMCEValueAccessor } from "./tinymce.valueaccessor";
 
